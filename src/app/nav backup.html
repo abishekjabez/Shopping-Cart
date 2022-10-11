@@ -1,0 +1,40 @@
+
+<div class="float">
+    <link rel="icon" href="assets/cart.ico">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light navbar-color">
+        <div class="container-fluid navbar-color">
+          <a class="navbar-brand navbar-color" routerLink="/"><h1>The Food Repository</h1></a> <img class="icon" src="https://cdn.dribbble.com/users/1187836/screenshots/5935226/media/6e394f6c1f7060543ce3e5eb2f5096b9.gif">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+      
+          <div class="collapse navbar-collapse" id="navbarsExample03" style="margin-left:50%;">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="products">Products &nbsp;&nbsp;</a>
+              </li>
+              <li class="nav-item">
+                 <button type="button" class="btn btn-warning" routerLink="cart">
+                  Cart <span  class="badge text-bg-secondary">{{cartData}}</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <!-- <a class="nav-link" routerLink="login">Login</a> -->
+              </li>
+    
+              
+              <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle btn ">&nbsp; &nbsp; More</a>
+                  <ul ngbDropdownMenu class="dropdown-menu ">
+                    <!-- <li><a ngbDropdownItem class="dropdown-item" >My Orders</a></li> -->
+                    <!-- <li><a ngbDropdownItem class="dropdown-item" >Admin-Orders</a></li> -->
+                    <li><a ngbDropdownItem class="dropdown-item" routerLink="admin/admin-product">Admin-Products</a></li>
+                    <!-- <li><a ngbDropdownItem class="dropdown-item" >Logout</a></li> -->
+                </ul>
+              </li>
+            </ul> 
+          </div>
+        </div>
+      </nav>
+    </div>

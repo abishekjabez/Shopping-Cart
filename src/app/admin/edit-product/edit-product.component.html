@@ -1,0 +1,99 @@
+
+<div *ngIf="overlay" class="overlay-item w3-animate-opacity">
+  <div class="card text" style="width: 18rem;">
+    <div class="card-body">
+     <br><h4 class="card-title">Product Updated !</h4><br>
+      <button class="btn btn-success" (click)="reRoute()">Ok</button>  
+    </div>
+  </div>
+
+  </div>
+
+ 
+
+
+<div  class="styling w3-animate-opacity">
+
+  <div class="row">
+    <div class="col-md-8">
+      <form #submit="ngForm" (ngSubmit)="save(submit.value)">
+        <div class="form-group"> 
+         
+          <!------------------------------------------NAME---------------------------------------->
+        <div>
+            <label for="name">Product Name</label>
+            <input  #productName="ngModel" [(ngModel)]="product.name" name="name" id="name" type="text" class="form-control " required minlength="3" >
+        
+        <div class="alert alert-danger w3-animate-opacity" *ngIf="productName.touched && productName.invalid">
+        
+          <div *ngIf="productName.control.errors?.['required']">Product Name is required !</div>
+          <div *ngIf="productName.control.errors?.['minlength']">Product Name should be at least {{productName.control.errors?.['minlength'].requiredLength}} characters. You have entered {{productName.control.errors?.['minlength'].actualLength}}. </div>
+          
+        </div> 
+        </div>
+        
+        <!------------------------------------------PRICE---------------------------------------->
+          <div class="form-group">
+            <label >Price</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <input #productPrice="ngModel" [(ngModel)]="product.price" name="price" type="number" class="form-control" required min="1" >
+            </div>
+            <div class="alert alert-danger w3-animate-opacity" *ngIf="productPrice.touched && productPrice.invalid">
+              <div *ngIf="productPrice.control.errors?.['required']">Price is required !</div>
+              <div *ngIf="productPrice.control.errors?.['min']"> Price cannot be less than 1 !</div>
+            </div>
+          </div>
+        
+          <!------------------------------------CATEGORY---------------------------------------------->
+          <div class="form-group">
+            <label >Category</label>
+          <div class="input-group mb-3">
+            <select #productCategory="ngModel" [(ngModel)]="product.category" name="category" class="form-select" id="inputGroupSelect02" required >
+              <option value="Meat">Meat</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Sea Foods">Sea Foods</option>
+
+            </select>
+        </div>
+        <div class="alert alert-danger w3-animate-opacity" *ngIf="productCategory.touched && productCategory.invalid">
+          <div *ngIf="productCategory.control.errors?.['required']"> Category is required !</div>
+          
+        </div>
+        </div>
+        
+        <!----------------------------------------IMAGE URL------------------------------------------>
+        <div class="form-group">
+            <label >Image Url</label>
+            <input #productImage="ngModel" [(ngModel)]="product.image" name="image" type="text" class="form-control" required minlength="5">
+        </div>
+        <div class="alert alert-danger w3-animate-opacity" *ngIf="productImage.touched && productImage.invalid" >
+          <div *ngIf="productImage.control.errors?.['required']">Image Url is required !</div>
+          <div *ngIf="productImage.control.errors?.['minlength']">Image Url should be at least {{productImage.control.errors?.['minlength'].requiredLength}} characters. You have entered {{productImage.control.errors?.['minlength'].actualLength}}. </div>
+        </div>
+        
+        <!------------------------------------------BUTTON---------------------------------------->
+        <button class="btn btn-success" style="margin-top:10px;" > Save Changes </button> 
+        
+        </div>
+        </form>
+    </div>
+    <div class="col-md ">
+      <div class="card w3-animate-opacity" style="width: 18rem;" *ngIf="product.name || product.image || product.price">
+        <img [src]="product.image" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <h6 class="card-text" >{{product.price | currency:'INR' }}<span *ngIf="product.price">/kg</span></h6>
+          <h6>{{product.category}}</h6>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  </div>
+  
+  

@@ -1,0 +1,49 @@
+
+
+
+<div class="styling w3-animate-opacity">
+    <h3 style="margin-top:20px; padding:10px;">Cart</h3>
+    <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="padding-left: 85px;" scope="col">Product Image</th>
+              <th class="align" scope="col">Product Name</th>
+              <th class="align" scope="col">Price</th>
+              <th class="align" scope="col">Category</th>
+              <!-- <th class="align" scope="col">Actions</th> -->
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartData$ | async ">
+            <td ><img class="img-style" [src]="item.payload.val().image" *ngIf="item.payload.val().image"></td> 
+            <td class="align text-align">{{item.payload.val().name}}</td> 
+            <td class="align text-align">₹ {{item.payload.val().price}}</td>
+            <td class="align text-align">{{item.payload.val().category}}</td>
+            <!-- <td>
+              <button type="button" class="btn btn-danger btn-style" (click)="onDelete(item.key)">Remove</button>
+            </td> -->
+            
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              
+              <td class="total align">Total:{{cartTotalValue}}</td>
+            
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+        <div *ngIf="cartData$">
+        <a class="btn btn-danger" style="margin-right:90px; float: right;" (click)="clearCart()" >CLEAR CART !</a>
+        <a class="btn btn-success disabled" style="margin-left:50px;" >Check Out</a>  
+    
+    </div>
+      
+    </div>
+    

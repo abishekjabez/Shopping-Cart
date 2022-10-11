@@ -1,0 +1,50 @@
+
+
+
+.img-styling{
+    
+    transition-duration: 2s;
+}
+
+
+.img-styling:hover{
+
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.parent{
+    position: relative;
+      top: 0;
+      left: 0;
+}
+
+.child{
+
+    position: absolute;
+      top: 60px;
+      left: 80px;
+      width: 900px;
+      margin-left: 400px;
+      margin-top: 250px;
+      
+}
+
+.fade {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 30px;
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+

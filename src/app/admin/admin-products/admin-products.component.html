@@ -1,0 +1,45 @@
+<br>
+<div class="w3-animate-opacity div-style" >
+<ul class="nav nav-pills nav-fill ">
+  <li class="nav-item " style="margin: 10px;" *ngFor="let item of data2$ | async" >
+    <a class="nav-link btn btn-primary nav-styling w3-animate-opacity" (click)="selected(item.key)">{{item.key}}</a>
+  </li>
+</ul>
+</div>
+
+
+<div class="styling w3-animate-opacity">
+<h3 style="margin-top:20px; padding:10px;">Admin Products</h3><br>
+<div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="padding-left: 85px;" scope="col">Product Image</th>
+          <th class="align" scope="col">Product Name</th>
+          <th class="align" scope="col">Price</th>
+          <th class="align" scope="col">Category</th>
+          <th class="align" scope="col">Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let item of data3$ | async " class="w3-animate-opacity">
+        <td ><img class="img-style" [src]="item.payload.val().image" *ngIf="item.payload.val().image"></td> 
+        <td class="align text-align">{{item.payload.val().name}}</td> 
+        <td class="align text-align">₹ {{item.payload.val().price}}</td>
+        <td class="align text-align">{{item.payload.val().category}}</td>
+        
+        <td>
+          <button class="btn btn-warning btn-style" [routerLink]="['admin/admin-edit-product/', item.key,item.payload.val().category]">Edit</button>
+          <button type="button" class="btn btn-danger btn-style" (click)="onDelete(item.key,item.payload.val().category)">Delete</button>
+        </td>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br><div>
+    <a class="btn btn-primary" style="margin-left:50px;" routerLink="/admin/add-product">Add a new product </a>
+  </div>
+</div>

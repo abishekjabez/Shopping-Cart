@@ -1,0 +1,38 @@
+<div *ngIf="overlay" class="overlay-item w3-animate-opacity">
+    <div class="card text" style="width: 18rem;">
+      <div class="card-body">
+  
+       <br><h4 class="card-title">Product Added</h4><br>
+        <button class="btn btn-success" (click)="reRoute()">Ok</button>  
+      </div>
+    </div>
+  
+    </div>
+  
+
+<div class="row">
+    <div class="col-md-3">
+<nav class="nav flex-column nav-style" >
+    <div  class=" btn styling w3-animate-opacity" *ngFor="let item of data$ | async" (click)="selected(item.key)">{{item.key}}</div>
+  </nav>
+</div>
+
+<div class="col-md ">
+    <div class="container text-left">
+        <div class="row">
+            <ng-container *ngFor="let item of data3$ | async let i=index " >
+                <div class="col-6 col-sm-5">
+                    <div  class="card card-style w3-animate-opacity" >
+                        <img src= {{item.payload.val().image}} class="card-img-top">
+                        <div class="card-body ">
+                        <h4 class="card-title">{{item.payload.val().name}}</h4>
+                        <h6 class="card-text">₹{{item.payload.val().price}}</h6>
+                        <h6 class="card-text">{{item.payload.val().category}}</h6> 
+                        <a class="btn btn-primary" (click)="addToCart(item.payload.val())" >Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="(i+1)%2===0" class="w-100 d-none d-md-block"></div>
+            </ng-container>          
+</div>
+

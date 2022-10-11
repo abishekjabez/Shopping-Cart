@@ -1,0 +1,56 @@
+.styling{
+
+    font-size:large;
+ 
+}
+
+.align{
+    
+    text-align: center;
+    margin: auto;
+}
+
+.text-align{
+    padding-top: 35px;
+}
+
+.btn-style{
+   
+   margin-top: 35px;
+   margin-left: 35px;
+   font-size: medium;
+   
+}
+.img-style{
+    height:100px; 
+    width:200px; 
+    object-fit:fill;
+    padding-left: 35px;
+    
+    
+}
+
+
+.nav-styling{
+
+    margin: 5px;
+    color: black;
+    
+    
+   
+}
+
+.nav-styling:hover{
+    background-color: orange;
+    color:black;
+    
+
+}
+
+.div-style{
+
+    position:block;
+    width: 100%;
+    height: 70px;
+    
+}

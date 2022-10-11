@@ -1,0 +1,16 @@
+.icon{
+    width: 150px;
+    height:110px;
+    
+
+}
+
+.navbar-color{
+    background-color: white;
+}
+
+.float{
+
+    float: left;
+    display: block;
+}

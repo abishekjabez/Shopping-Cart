@@ -1,0 +1,31 @@
+.styling{
+    margin: 20px;
+    padding: 5px;
+}
+
+.overlay-item{
+
+  
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    
+    z-index: 2;
+    
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+   
+}
+
+.text{
+    margin: auto;
+    margin-top: 270px;
+    height: 180px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: -10px 10px 100px #9191913b;
+    color: black;
+    background-color:whitesmoke;
+    transition-duration:2s;
+}

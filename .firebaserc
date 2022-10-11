@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shopping-cart-a9e75": {
+      "hosting": {
+        "shoppingCart": [
+          "shopping-cart-a9e75"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shopping-cart-a9e75"
+  }
+}

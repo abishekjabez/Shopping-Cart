@@ -1,0 +1,53 @@
+.styling{
+
+    font-size:large;
+ 
+}
+
+.align{
+    
+    text-align: center;
+   
+}
+
+.text-align{
+    padding-top: 35px;
+}
+
+.btn-style{
+   
+   margin-top: 23px;
+   margin-left: 40%;
+   font-size: medium;
+}
+.img-style{
+    height:100px; 
+    width:200px; 
+    object-fit:fill;
+    padding-left: 35px;
+    
+    
+}
+
+
+.nav-styling{
+
+    margin: 5px;
+    color: black;
+   
+}
+
+.nav-styling:hover{
+    background-color: orange;
+    color:black;
+
+}
+
+.total{
+    margin-top: 23px;
+    margin-left: 90%;
+    font-size: xx-large;
+    
+    
+    
+}
